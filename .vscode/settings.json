@@ -19,7 +19,7 @@
   "explorer.fileNesting.patterns": {
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
     "app.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
-    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .prettier*, prettier*, .editorconfig, .gitattributes, bun.lock"
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, biome.json, .editorconfig, .gitattributes, bun.lock*"
   },
 
   // always choose typescript from node_modules
@@ -28,8 +28,10 @@
   // use LF line endings
   "files.eol": "\n",
 
-  // set prettier as default formatter for json, ts, tsx, js, jsx, html, css
+  // set biome as default formatter for json, ts, tsx, js, jsx, html, css
+  "files.autoSave": "onFocusChange",
+  "editor.formatOnSave": true,
   "[json][jsonc][typescript][typescriptreact][javascript][javascriptreact][html][css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   }
 }
